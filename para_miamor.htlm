@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Para Ti ❤️</title>
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.card{
+  background: rgba(0,0,0,0.35);
+  padding:40px;
+  border-radius:20px;
+  max-width:600px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+h1{font-size:40px;margin-bottom:10px;}
+p{font-size:18px;line-height:1.6}
+button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  background:#ff4d6d;
+  color:white;
+}
+button:hover{background:#ff1e4d}
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(0);opacity:1}
+  to{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>Para Ti ❤️</h1>
+<p>
+Sé que hoy no fue un día fácil. Sé que estás pasando por muchas emociones
+por dejar cosas importantes para venir a estar conmigo.
+</p>
+
+<p>
+Quiero que sepas que valoro muchísimo lo que estás haciendo por nosotros.
+A veces puedo equivocarme, pero nunca quiero que sientas que estás sola.
+</p>
+
+<p>
+Aunque ahora estemos a la distancia...
+<br><br>
+<strong>Florencia → Armenia</strong>
+<br>
+mi lugar favorito sigue siendo contigo.
+</p>
+
+<button onclick="mostrarMensaje()">Haz clic aquí 💌</button>
+
+<p id="mensaje" style="display:none;margin-top:20px;font-size:20px;">
+Te amo y te estoy esperando aquí ❤️
+</p>
+</div>
+
+<script>
+function mostrarMensaje(){
+  document.getElementById('mensaje').style.display='block';
+}
+
+function crearCorazon(){
+  const heart=document.createElement('div');
+  heart.className='heart';
+  heart.innerHTML='❤️';
+  heart.style.left=Math.random()*100+'vw';
+  heart.style.animationDuration=(Math.random()*3+3)+'s';
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },6000);
+}
+
+setInterval(crearCorazon,400);
+</script>
+
+</body>
+</html>
